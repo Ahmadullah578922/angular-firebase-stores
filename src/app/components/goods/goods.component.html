@@ -1,0 +1,33 @@
+<div>
+    <h2 class="text-center">Add New Good</h2>
+    <form #f="ngForm" (ngSubmit)="addNewGood(f)">
+      <input type="text" class="form-control" name="name" ngModel placeholder="Name" required>
+      <input type="number" class="form-control" name="price" ngModel placeholder="Price" required>
+      <input type="file" ngModel name="image" required #image> <br><br>
+      <input type="submit" value="Add" class="btn btn-primary m-1" [disabled]="f.invalid">
+    </form>
+  </div>
+
+  <div class="row mt-4 justify-content-center text-center">
+    <div class="col-lg-10">
+      <table class="table table-bordered table-striped table-hovered">
+        <thead>
+          <th>Name</th>
+          <th>Photo</th>
+          <th>Price</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let good of goods">
+            <td>{{good.name | titlecase}}</td>
+            <td><img class="card-img-top img-responsive" style="height:200px; width:200px;"[src]="good.photoUrl"></td>
+            <td>{{good.price | currency}}</td>
+            <td>
+              <button class="btn btn-primary m-1 p-3">Edit</button>
+              <button class="btn btn-danger m-1 p-3">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

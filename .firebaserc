@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "store-ba3ec": {
+      "hosting": {
+        "store": [
+          "store-ba3ec"
+        ]
+      }
+    }
+  }
+}
